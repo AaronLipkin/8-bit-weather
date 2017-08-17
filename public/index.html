@@ -26,8 +26,8 @@
 <div ng-repeat="location in weather.locations">
 	{{location.name}}
 	<button ng-click="weather.deleteLocation(location._id)">Dlete</button>
-	<input type="text" ng-model="this.newName">
-	<button ng-click="weather.renameLocation(location._id)">Rname</button>
+	<input type="text" ng-model="location.newName">
+	<button ng-click="weather.renameLocation(location._id, location.newName)">Rname</button>
 </div>
 
 </body>
