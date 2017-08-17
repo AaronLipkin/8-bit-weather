@@ -1,11 +1,16 @@
 <!DOCTYPE html>
-<html ng-app="PixelWeather">
+<html ng-app="PixelWeather" ng-controller="UserController as user">
 <head>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js" charset="utf-8"></script>
 <script type="text/javascript" src="/app.js"></script>
 	<title></title>
 </head>
 <body ng-controller="WeatherController as weather">
+<form ng-submit="user.login()">
+	<input type="text" ng-model="user.name">
+	<input type="password" ng-model="user.password">
+	<button type="submit">LOGIN</button>
+</form>
 <button ng-click="weather.getWeather()">Get my weather</button>
 <div ng-show="weather.weather">
 <h1>Current Weather for {{weather.weather.data.name}}</h1>
