@@ -47,6 +47,19 @@ app.controller('WeatherController', ['$http', function($http){
 	            })
 	}
 
+	this.getWeatherByLoc = function(lat,lng) {
+		    $http({
+	            method:'get',
+	            url:'/weather/' + lat + '/' + lng,
+	        }).then(
+	            (response) => {
+	                this.weather = response
+	            },
+	            function(){
+	            	console.log(lat,lng)
+	            })
+		}
+
 	this.getLocations = function() {
 		$http({
 	            method:'get',
@@ -73,4 +86,19 @@ app.controller('WeatherController', ['$http', function($http){
 	            	console.log(this.lat,this.lng)
 	            })
 	}
+
+	this.deleteLocation = function(id) {
+		    $http({
+	            method:'delete',
+	            url:'/locations/' + id,
+	        }).then(
+	            (response) => {
+	                this.getLocations()
+	            },
+	            function(){
+	            	console.log(this.lat,this.lng)
+	            })
+	}
+
+	this.getLocations()
 }])

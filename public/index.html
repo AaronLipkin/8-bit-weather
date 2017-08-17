@@ -23,6 +23,10 @@
 	<button type="submit">Save Location</button>
 </form>
 </div>
+<div ng-repeat="location in weather.locations">
+	{{location.name}}
+	<button ng-click="weather.deleteLocation(location._id)">Dlete</button>
+</div>
 
 </body>
 </html>
