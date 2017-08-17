@@ -7,5 +7,14 @@
 </head>
 <body ng-controller="WeatherController as weather">
 <button ng-click="weather.getWeather()"></button>
+<div>
+	{{weather.weather}}
+</div>
+
+<form ng-submit="weather.login()">
+	<input type="text" ng-model="weather.name">
+</form>
+
+{{weather.user}}
 </body>
 </html>
