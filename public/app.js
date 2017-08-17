@@ -46,34 +46,34 @@ app.controller('WeatherController', ['$http', function($http){
 	            	console.log(this.lat,this.lng)
 	            })
 	}
-}])
 
-app.controller('UserController', ['$http', function($http) {
-	this.login = function() {
-			$http({
-	            method:'post',
-	            url:'/users/' + this.name + '/' + this.password,
-	        }).then(
-	            (response) => {
-	                this.user = response
-	                console.log(response)
-	            },
-	            function(){
-	            	console.log('shit')
-	            })
-		}
-
-	this.saveLocation - function() {
+	this.getLocations = function() {
 		$http({
-	            method:'post',
-	            url:'/users/save/'
+	            method:'get',
+	            url:'/weather/locations'
 	        }).then(
 	            (response) => {
-	                this.session = response
+	                this.locations = response.data
 	            },
 	            function(){
-	            	console.log('shit')
+	            	console.log(this.lat,this.lng)
 	            })
 	}
-}])
 
+
+	this.saveLocation = function() {
+		if(lat && long) {
+
+		    $http({
+	            method:'post',
+	            url:'/weather/' + this.name + '/' + this.lat + '/' + this.lng,
+	        }).then(
+	            (response) => {
+	                this.getLocations()
+	            },
+	            function(){
+	            	console.log(this.lat,this.lng)
+	            })
+		}
+	}
+}])
