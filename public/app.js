@@ -51,11 +51,11 @@ app.controller('WeatherController', ['$http', function($http){
 app.controller('UserController', ['$http', function($http) {
 	this.login = function() {
 			$http({
-	            method:'get',
+	            method:'post',
 	            url:'/sessions/' + this.name + '/' + this.password,
 	        }).then(
 	            (response) => {
-	                this.session = response
+	                this.user = response
 	            },
 	            function(){
 	            	console.log('shit')
