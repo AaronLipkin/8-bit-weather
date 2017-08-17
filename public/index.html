@@ -1,17 +1,22 @@
 <!DOCTYPE html>
 <html ng-app="PixelWeather">
 <head>
+<script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
 <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="./css/main.css">
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js" charset="utf-8"></script>
 <script type="text/javascript" src="/app.js"></script>
+<script type="text/javascript" src="/thequeries.js"></script>
 	<title></title>
 </head>
 <body ng-controller="WeatherController as weather">
 
-
-<div class="container">
 <div class="title"><h1 class="start">START<h1></div>
+<div class="container">
+
 <form ng-submit="weather.getWeatherByPlace()">
 	<input type="text" ng-model="weather.address" placeholder="Address, city, or zipcode" required><br>
 	<button type="submit">Get Weather</button> Or
