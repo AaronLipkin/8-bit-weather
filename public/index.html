@@ -6,6 +6,7 @@
 	<title></title>
 </head>
 <body ng-controller="WeatherController as weather">
+
 <form ng-submit="user.login()">
 	<input type="text" ng-model="user.name">
 	<input type="password" ng-model="user.password">
@@ -13,7 +14,7 @@
 </form>
 <h1>Get Weather for:</h1>
 <form ng-submit="weather.getWeatherByPlace()">
-	<input type="text" ng-model="weather.address" placeholder="Address, city, or zipcode"><br>
+	<input type="text" ng-model="weather.address" placeholder="Address, city, or zipcode" required><br>
 	<button type="submit">Get Weather</button> Or
 	<button ng-click="weather.getWeather()">Use My location</button>
 </form>
