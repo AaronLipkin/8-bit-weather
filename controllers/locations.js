@@ -21,7 +21,7 @@ router.get('/:name', function(req, res){
 
 //create route
 router.post('/:name/:lat/:lng', function(req, res){
-	Location.create(req.body, function(err, createdLocation){
+	Location.create(req.params, function(err, createdLocation){
 		res.json(createdLocation); //.json() will send proper headers in response so client knows it's json coming back
 	});
 });
