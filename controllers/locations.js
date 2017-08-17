@@ -44,7 +44,7 @@ router.delete('/:id', function(req, res){
 
 //update route
 router.put('/:id/:name', function(req, res){
-	Location.findByIdAndUpdate(req.params.id, req.params.name, {new: true}, function(err, updatedLocation){
+	Location.findByIdAndUpdate(req.params.id, {name: req.params.name}, {new: true}, function(err, updatedLocation){
 		res.json(updatedLocation);
 	});
 });
