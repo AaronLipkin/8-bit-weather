@@ -11,6 +11,12 @@ router.get('/', function(req, res){
 	});
 });
 
+router.get('/:name', function(req, res){
+	User.find({name: req.params.name}, function(err, foundUser){
+		res.json(foundUser);
+	});
+});
+
 //create route
 router.post('/', function(req, res){
 	User.create(req.body, function(err, createdUser){
@@ -19,7 +25,7 @@ router.post('/', function(req, res){
 });
 
 //seed route
-router.post('/', function(req, res){
+router.get('/seed', function(req, res){
 	User.create([
 	{
 		name: 'blinky',

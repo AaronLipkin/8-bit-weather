@@ -21,6 +21,19 @@ app.controller('WeatherController', ['$http', function($http){
 			if (navigator.geolocation) navigator.geolocation.getCurrentPosition(onPositionUpdate);
 
 		}
+
+		this.login = function() {
+			$http({
+	            method:'get',
+	            url:'/users/' + this.name ,
+	        }).then(
+	            (response) => {
+	                this.user = response.data
+	            },
+	            function(){
+	            	console.log(this.lat,this.lng)
+	            })
+		}
 }])
 
 
