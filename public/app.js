@@ -101,6 +101,7 @@ app.controller('WeatherController', ['$http', function($http){
 	}
 	
 	this.renameLocation = function(id, newName) {
+		if(newName) {
 		    $http({
 	            method:'put',
 	            url:'/locations/' + id + '/' + newName
@@ -111,6 +112,7 @@ app.controller('WeatherController', ['$http', function($http){
 	            function(){
 	            	console.log(this.lat,this.lng)
 	            })
+	    }
 	}
 
 	this.getLocations()
