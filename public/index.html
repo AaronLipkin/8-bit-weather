@@ -6,15 +6,10 @@
 	<title></title>
 </head>
 <body ng-controller="WeatherController as weather">
-<button ng-click="weather.getWeather()"></button>
-<div>
-	{{weather.weather}}
+<button ng-click="weather.getWeather()">Get my weather</button>
+<div ng-show="weather.weather">
+<h1>Current Weather for {{weather.weather.data.name}}</h1>
+{{weather.weather.data.main.temp}} degrees
 </div>
-
-<form ng-submit="weather.login()">
-	<input type="text" ng-model="weather.name">
-</form>
-
-{{weather.user}}
 </body>
 </html>
