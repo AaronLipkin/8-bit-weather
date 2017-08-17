@@ -29,7 +29,7 @@ app.controller('UserController', ['$http', function($http) {
 	this.login = function() {
 			$http({
 	            method:'get',
-	            url:'/users/' + this.name + '/' + this.password,
+	            url:'/sessions/' + this.name + '/' + this.password,
 	        }).then(
 	            (response) => {
 	                this.session = response
