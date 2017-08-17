@@ -29,8 +29,8 @@ router.post('/:name/:lat/:lng', function(req, res){
 
 
 router.get('/:name', function(req, res){
-	User.find({name: req.params.name}, function(err, foundUser){
-		res.json(foundUser);
+	Location.find({name: req.params.name}, function(err, foundLocation){
+		res.json(foundLocation);
 	});
 });
 
