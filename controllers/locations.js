@@ -1,7 +1,7 @@
 //dependencies
 const express = require('express');
 const router = express.Router();
-const User = require('../models/location.js');
+const Location = require('../models/location.js');
 
 
 
