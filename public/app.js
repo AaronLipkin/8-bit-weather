@@ -62,8 +62,6 @@ app.controller('WeatherController', ['$http', function($http){
 
 
 	this.saveLocation = function() {
-		if(lat && long) {
-
 		    $http({
 	            method:'post',
 	            url:'/weather/' + this.name + '/' + this.lat + '/' + this.lng,
@@ -74,6 +72,5 @@ app.controller('WeatherController', ['$http', function($http){
 	            function(){
 	            	console.log(this.lat,this.lng)
 	            })
-		}
 	}
 }])

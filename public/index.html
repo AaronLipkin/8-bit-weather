@@ -18,6 +18,11 @@
 <div ng-show="weather.weather">
 <h1>Current Weather for {{weather.weather.data.name}}</h1>
 {{weather.weather.data.main.temp *9/5 + 32}} degrees
+<form ng-submit="weather.saveLocation()">
+	<input type="text" ng-model="weather.name" required>
+	<button type="submit">Save Location</button>
+</form>
 </div>
+
 </body>
 </html>
