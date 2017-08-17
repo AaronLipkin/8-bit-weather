@@ -11,11 +11,15 @@ app.use(bodyParser.urlencoded({extended:false}));
 app.use(express.static('public'));
 
 //controllers
-const userController = require('./controllers/users.js');
-app.use('/users', userController);
+const user = require('./controllers/users.js');
+app.use('/users', user);
+
+const weather = require('./controllers/weather.js');
+app.use('/weather', weather);
 
 
 
+//index route
 app.get('/', (req, res)=>{
 	res.send('yeah boiiiiii');
 });

@@ -19,7 +19,7 @@ router.post('/', function(req, res){
 });
 
 //seed route
-router.post('/', function(req, res){
+router.post('/seeddata', function(req, res){
 	User.create([
 	{
 		name: 'blinky',
