@@ -22,18 +22,21 @@ app.controller('WeatherController', ['$http', function($http){
 			console.log(this.lat,this.lng)
 		}
 
-		this.login = function() {
+
+}])
+
+app.controller('UserController', ['$http', function($http) {
+	this.login = function() {
 			$http({
 	            method:'get',
-	            url:'/users/' + this.name,
+	            url:'/users/' + this.name + '/' + this.password,
 	        }).then(
 	            (response) => {
-	                this.user = response.data
+	                this.session = response
 	            },
 	            function(){
-	            	console.log(this.lat,this.lng)
+	            	console.log('shit')
 	            })
 		}
 }])
-
 
