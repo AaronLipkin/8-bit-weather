@@ -10,13 +10,13 @@ app.use(methodOverride('_method'));
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(express.static('public'));
 
-
-
+//controllers
+const userController = require('./controllers/users.js');
+app.use('/users', userController);
 
 
 
 app.get('/', (req, res)=>{
-	
 	res.send('yeah boiiiiii');
 });
 
