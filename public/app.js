@@ -52,10 +52,11 @@ app.controller('UserController', ['$http', function($http) {
 	this.login = function() {
 			$http({
 	            method:'post',
-	            url:'/sessions/' + this.name + '/' + this.password,
+	            url:'/users/' + this.name + '/' + this.password,
 	        }).then(
 	            (response) => {
 	                this.user = response
+	                console.log(response)
 	            },
 	            function(){
 	            	console.log('shit')
@@ -65,7 +66,7 @@ app.controller('UserController', ['$http', function($http) {
 	this.saveLocation - function() {
 		$http({
 	            method:'post',
-	            url:'/users/' + this.name + '/' + this.password,
+	            url:'/users/save/' + ,
 	        }).then(
 	            (response) => {
 	                this.session = response
