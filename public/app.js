@@ -66,7 +66,7 @@ app.controller('UserController', ['$http', function($http) {
 	this.saveLocation - function() {
 		$http({
 	            method:'post',
-	            url:'/users/save/' + ,
+	            url:'/users/save/'
 	        }).then(
 	            (response) => {
 	                this.session = response
