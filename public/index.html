@@ -11,10 +11,16 @@
 	<input type="password" ng-model="user.password">
 	<button type="submit">LOGIN</button>
 </form>
-<button ng-click="weather.getWeather()">Get my weather</button>
+<h1>Get Weather for:</h1>
+<form ng-submit="weather.getWeatherByPlace()">
+	<input type="text" ng-model="weather.address" placeholder="Address, city, or zipcode"><br>
+	<button type="submit">Get Weather</button> Or
+	<button ng-click="weather.getWeather()">Use My location</button>
+</form>
+
 <div ng-show="weather.weather">
 <h1>Current Weather for {{weather.weather.data.name}}</h1>
-{{weather.weather.data.main.temp}} degrees
+{{weather.weather.data.main.temp *9/5 + 32}} degrees
 </div>
 </body>
 </html>
