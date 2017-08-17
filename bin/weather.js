@@ -1,3 +1,5 @@
+const request = require('request'); 
+
 // OpenWeather API Key
 const apiKey = process.env.API_KEY;
 
