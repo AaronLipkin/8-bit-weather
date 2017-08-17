@@ -19,12 +19,6 @@ const getWeatherData = (res, lat, lng) => {
   console.log(parsedBody)
   responseToClient(res, body) //send it back to client side
   }); 
-
-
-
-
-
-
 }
 
 
