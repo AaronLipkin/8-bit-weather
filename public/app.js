@@ -50,7 +50,7 @@ app.controller('WeatherController', ['$http', function($http){
 	this.getLocations = function() {
 		$http({
 	            method:'get',
-	            url:'/weather/locations'
+	            url:'/locations'
 	        }).then(
 	            (response) => {
 	                this.locations = response.data
@@ -64,7 +64,7 @@ app.controller('WeatherController', ['$http', function($http){
 	this.saveLocation = function() {
 		    $http({
 	            method:'post',
-	            url:'/weather/' + this.name + '/' + this.lat + '/' + this.lng,
+	            url:'/locations/' + this.name + '/' + this.lat + '/' + this.lng,
 	        }).then(
 	            (response) => {
 	                this.getLocations()
