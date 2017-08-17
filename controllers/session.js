@@ -1,6 +1,5 @@
 //	DEPENDENCIES
 const express = require('express');
-const bcrypt = require('bcrypt-nodejs');
 const router = express.Router();
 const User = require('../models/user.js');
 
@@ -11,6 +10,7 @@ router.post('/:name/:password', (req, res)=>{
       if(req.params.password == foundUser.password){
         req.session.currentUser = foundUser;
         res.json(foundUser);
+        console.log(foundUser);
       } else {
           res.send('GAME OVER')
       } 

@@ -2,7 +2,7 @@
 const express = require('express');
 const router = express.Router();
 const User = require('../models/user.js');
-const bcrypt = require('bcrypt-nodejs');
+
 
 
 // index route
@@ -11,6 +11,7 @@ router.get('/', function(req, res){
 		res.json(foundUser);
 	});
 });
+
 
 //seed route
 router.get('/seed', function(req, res){
@@ -54,6 +55,7 @@ router.get('/:name', function(req, res){
 	});
 });
 
+
 //create route
 router.post('/', function(req, res){
 	User.create(req.body, function(err, createdUser){
@@ -96,6 +98,21 @@ router.get('/seed', function(req, res){
     		res.redirect('/users')
   		})
 });
+
+router.post('/:name/:password', (req, res)=>{
+  User.findOne({ name: req.params.name}, (err, foundUser)=>{
+        res.json(foundUser);
+        console.log(foundUser);
+  });
+});
+
+
+router.get('/:name', function(req, res){
+	User.find({name: req.params.name}, function(err, foundUser){
+		res.json(foundUser);
+	});
+});
+
 
 //delete route
 router.delete('/:id', function(req, res){
