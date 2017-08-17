@@ -14,8 +14,8 @@ app.use(express.static('public'));
 
 
 //controllers
-const user = require('./controllers/users.js');
-app.use('/users', user);
+const location = require('./controllers/locations.js');
+app.use('/locations', location);
 
 const weather = require('./controllers/weather.js');
 app.use('/weather', weather);
