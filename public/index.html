@@ -21,7 +21,7 @@
 	<div class="title" ng-click="weather.getWeather()"><h1 class="start">START<h1></div>
 	<div class="wheel-parent" ng-hide="weather.weather"><img class="wheel" src="/wheel.png"></div>
 	<!-- container section -->
-	<div class="container" ng-show="weather.weather">
+	<div class="container" ng-show="weather.weather" ng-cloak>
 
 		<!-- get weather section -->
 		<form ng-submit="weather.getWeatherByPlace()">
@@ -38,8 +38,6 @@
 			{{weather.weather.data.weather[0].description}}<br/>
 			{{weather.weather.data.main.humidity}} humidity<br/>
 			{{weather.weather.data.wind.speed}} wind speed<br/>
-
-
 			</h4>
 			<form ng-submit="weather.saveLocation()">
 				<input type="text" ng-model="weather.name" required>
