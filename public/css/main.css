@@ -35,6 +35,11 @@ button {
 	animation: neon 1.5s ease-in-out infinite alternate;
 }
 
+button:hover {
+	background-color: #25E359;
+	color: black;
+}
+
 p {
 	display: inline-block;
 	margin-right: 20px;
@@ -107,4 +112,12 @@ p {
 	from {transform: rotate(0deg);} to {transform: rotate(360deg);}
 }
 
+
+/*************************
+/* saved location styles 
+**************************/
+
+.saved-locations {
+	margin-top: 50px;
+}
 

@@ -49,15 +49,17 @@
 		</div>
 
 		<!-- list of saved locations -->
-		<h3>Saved locations:</h3>
-		<div ng-repeat="location in weather.locations">
-			<p ng-click="weather.getWeatherByLoc(location.lat,location.lng)">{{location.name}}</p>
-			<button ng-click="weather.deleteLocation(location._id)">Dlete</button>
-			<button ng-show="!(location.renaming)" ng-click="location.renaming = !(location.renaming)">Rname</button>
-			<div ng-show="location.renaming">
-				<input type="text" ng-model="location.newName" required>
-				<button ng-click="weather.renameLocation(location._id, location.newName)"">Rname</button>
-				<button ng-click="location.renaming=false">Cncel</button>
+		<div class="saved-locations">
+			<h3>Saved locations:</h3>
+			<div ng-repeat="location in weather.locations">
+				<p ng-click="weather.getWeatherByLoc(location.lat,location.lng)">{{location.name}}</p>
+				<button ng-click="weather.deleteLocation(location._id)">Dlete</button>
+				<button ng-show="!(location.renaming)" ng-click="location.renaming = !(location.renaming)">Rname</button>
+				<div ng-show="location.renaming">
+					<input type="text" ng-model="location.newName" required>
+					<button ng-click="weather.renameLocation(location._id, location.newName)"">Rname</button>
+					<button ng-click="location.renaming=false">Cncel</button>
+				</div>
 			</div>
 		</div>
 
