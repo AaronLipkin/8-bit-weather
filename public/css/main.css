@@ -23,6 +23,7 @@ input {
 	color: #25E359;
 	height: 20px;
 	width: 300px;
+	padding-left: 5px;
 }
 
 button {
@@ -32,6 +33,11 @@ button {
 	height: 20px;
 	width: 100px;
 	animation: neon 1.5s ease-in-out infinite alternate;
+}
+
+button:hover {
+	background-color: #25E359;
+	color: black;
 }
 
 p {
@@ -52,6 +58,7 @@ p {
     transform: translate(-50%,-50%);
     border: 2px solid #25E359;
     background: rgba(80, 78, 78, 0.6);
+    padding: 20px;
 }
 
 
@@ -105,4 +112,12 @@ p {
 	from {transform: rotate(0deg);} to {transform: rotate(360deg);}
 }
 
+
+/*************************
+/* saved location styles 
+**************************/
+
+.saved-locations {
+	margin-top: 50px;
+}
 
