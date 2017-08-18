@@ -1,4 +1,5 @@
 # 8-bit-weather
+[Link to live site](https://eight-bit-weather.herokuapp.com/)
 
 ## Team
 
