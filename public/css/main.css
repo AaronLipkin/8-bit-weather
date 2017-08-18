@@ -11,8 +11,7 @@ h1 {
     font-size: 48px;
 }
 
-<<<<<<< HEAD
-=======
+
 h4 {
 	font-family: 'Press Start 2P', cursive;
     color: #25E359;
@@ -35,7 +34,6 @@ button {
 	animation: neon 1.5s ease-in-out infinite alternate;
 }
 
->>>>>>> 3e9600db86a165cca924c8952dfe2648f4e6ca0c
 /*************************
 /* main container styles 
 **************************/
