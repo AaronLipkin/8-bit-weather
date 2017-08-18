@@ -23,7 +23,6 @@ h4 {
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
-    display: none;
 }
 /*************************
 /* title styles 
@@ -51,6 +50,23 @@ h4 {
   to {
     text-shadow: 0 0 5px #78b761, 0 0 10px #78b761, 0 0 15px #78b761, 0 0 20px #35a50d, 0 0 35px #35a50d, 0 0 40px #35a50d, 0 0 50px #35a50d, 0 0 75px #35a50d;
   }
+}
+
+.wheel-parent {
+	position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    display: none;
+}
+
+.wheel {
+	width: 100px;
+    animation: spin 1.5s linear infinite;
+}
+
+@keyframes spin {
+	from {transform: rotate(0deg);} to {transform: rotate(360deg);}
 }
 /*************************
 /* my weather styles 

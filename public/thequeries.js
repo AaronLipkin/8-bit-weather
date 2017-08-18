@@ -1,6 +1,6 @@
 $(() => {
 	$('.start').on('click', () =>{
 		$('.start').hide()
-		$('.container').show()
+		$('.wheel-parent').show()
 	})
 })
