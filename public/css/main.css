@@ -23,6 +23,7 @@ input {
 	color: #25E359;
 	height: 20px;
 	width: 300px;
+	padding-left: 5px;
 }
 
 button {
@@ -52,6 +53,7 @@ p {
     transform: translate(-50%,-50%);
     border: 2px solid #25E359;
     background: rgba(80, 78, 78, 0.6);
+    padding: 20px;
 }
 
 
