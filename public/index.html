@@ -35,10 +35,12 @@
 			<div ng-show="weather.weather">
 			<h1>{{weather.weather.data.name}}</h1>
 			<h4>{{weather.weather.data.main.temp *9/5 + 32}} &deg;F<br/>
-			{{weather.weather.data.weather[0].description}}<br/>
 			{{weather.weather.data.main.humidity}} humidity<br/>
 			{{weather.weather.data.wind.speed}} wind speed<br/>
+			{{weather.weather.data.weather[0].description}}<br/>
 			</h4>
+			
+
 			<form ng-submit="weather.saveLocation()">
 				<input type="text" ng-model="weather.name" required>
 				<button type="submit">Save Location</button>
@@ -47,8 +49,9 @@
 		</div>
 
 		<!-- list of saved locations -->
+		<h3>Saved locations:</h3>
 		<div ng-repeat="location in weather.locations">
-			{{location.name}}
+			<p>{{location.name}}</p>
 			<button ng-click="weather.deleteLocation(location._id)">Dlete</button>
 			<button ng-show="!(location.renaming)" ng-click="location.renaming = !(location.renaming)">Rname</button>
 			<div ng-show="location.renaming">
