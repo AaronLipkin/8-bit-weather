@@ -17,6 +17,38 @@
 
 <body ng-controller="WeatherController as weather">
 
+<<<<<<< HEAD
+<div class="title" ng-click="weather.getWeather()"><h1 class="start">START<h1></div>
+<div class="wheel-parent"><img class="wheel" src="/wheel.png"></div>
+<div class="container">
+
+<form ng-submit="weather.getWeatherByPlace()">
+	<input type="text" ng-model="weather.address" placeholder="Address, city, or zipcode" required><br>
+	<button type="submit">Get Weather</button> Or
+</form>
+
+<button ng-click="weather.getWeather()">Use My location</button>
+
+<div ng-show="weather.weather">
+<h1>Current Weather for {{weather.weather.data.name}}</h1>
+{{weather.weather.data.main.temp *9/5 + 32}} degrees
+<form ng-submit="weather.saveLocation()">
+	<input type="text" ng-model="weather.name" required>
+	<button type="submit">Save Location</button>
+</form>
+</div>
+<div ng-repeat="location in weather.locations">
+	{{location.name}}
+	<button ng-click="weather.deleteLocation(location._id)">Dlete</button>
+	<button ng-show="!(location.renaming)" ng-click="location.renaming = !(location.renaming)">Rname</button>
+	<div ng-show="location.renaming">
+		<input type="text" ng-model="location.newName" required>
+		<button ng-click="weather.renameLocation(location._id, location.newName)"">Rname</button>
+		<button ng-click="location.renaming=false">Cncel</button>
+	</div>
+</div>
+</div> <!-- end container -->
+=======
 	<!-- title section -->
 	<div class="title"><h1 class="start">START<h1></div>
 
@@ -55,6 +87,7 @@
 		</div>
 
 	</div> <!-- end container -->
+>>>>>>> 917c47d43c17e05b963cfa24e098675ec5e5514b
 
 </body>
 </html>

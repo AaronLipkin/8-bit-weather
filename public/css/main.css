@@ -6,29 +6,25 @@ body {
     color: #ffffff;
 }
 h1 {
-	font-family: 'Press Start 2P', cursive;
-	color: #25E359;
-	font-size: 48px;
+    font-family: 'Press Start 2P', cursive;
+    color: #25E359;
+    font-size: 48px;
 }
-
 /*************************
 /* main container styles 
 **************************/
-
 .container {
-	position: absolute;
-	top: 50%;
+    position: absolute;
+    top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
-	display: none;
+    display: none;
 }
-
 /*************************
 /* title styles 
 **************************/
-
 .title {
-	text-align: center;
+    text-align: center;
     text-justify: inter-word;
     letter-spacing: 0.3em;
     position: absolute;
@@ -37,14 +33,12 @@ h1 {
     transform: translate(-50%,-50%);
     cursor: pointer;
 }
-
 .start, .start.active {
   font-size: 75px;
   -webkit-animation: neon 1.5s ease-in-out infinite alternate;
   -moz-animation: neon 1.5s ease-in-out infinite alternate;
   animation: neon 1.5s ease-in-out infinite alternate;
 }
-
 @-webkit-keyframes neon {
   from {
     text-shadow: 0 0 10px #78b761, 0 0 20px #78b761, 0 0 30px #78b761, 0 0 40px #35a50d, 0 0 70px #35a50d, 0 0 80px #35a50d, 0 0 100px #35a50d, 0 0 150px #35a50d;
@@ -53,14 +47,6 @@ h1 {
     text-shadow: 0 0 5px #78b761, 0 0 10px #78b761, 0 0 15px #78b761, 0 0 20px #35a50d, 0 0 35px #35a50d, 0 0 40px #35a50d, 0 0 50px #35a50d, 0 0 75px #35a50d;
   }
 }
-
-
 /*************************
 /* my weather styles 
 **************************/
-
-
-
-
-
-
