@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html ng-app="PixelWeather">
+<head>
+	<title>8-bit Weather</title>
+	<!-- stylesheets -->
+	<link rel="shortcut icon" href="/Asset 3.png">
+	<link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="./css/main.css">
+	<!-- script styles -->
+	<script
+	  src="https://code.jquery.com/jquery-3.2.1.min.js"
+	  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+	  crossorigin="anonymous"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js" charset="utf-8"></script>
+	<script type="text/javascript" src="/app.js"></script>
+	<script type="text/javascript" src="/thequeries.js"></script>
+</head>
+
+<body ng-controller="WeatherController as weather">
+
+	<!-- title section -->
+	<div class="title" ng-click="weather.getWeather()"><h1 class="start">START<h1></div>
+	<div class="wheel-parent" ng-hide="weather.weather"><img class="wheel" src="/wheel.png"></div>
+	<!-- container section -->
+	<div class="container" ng-show="weather.weather" ng-cloak>
+
+		<!-- get weather section -->
+		<form ng-submit="weather.getWeatherByPlace()">
+			<input type="text" ng-model="weather.address" placeholder="Address, city, or zipcode" required>
+			<button type="submit">Get Weather</button>
+		</form>
+
+		<!-- use my weather section -->
+		<div class="my-weather">
+			<div ng-show="weather.weather">
+			<h1>{{weather.weather.data.name}}</h1>
+			<h4>{{weather.weather.data.main.temp *9/5 + 32}}&deg;F<br/>
+			{{weather.weather.data.main.humidity}}% humidity<br/>
+			{{weather.weather.data.wind.speed}}mph wind speed<br/>
+			{{weather.weather.data.weather[0].description}}<br/>
+			</h4>
+			
+
+			<form ng-submit="weather.saveLocation()">
+				<input type="text" ng-model="weather.name" placeholder="New location name" required>
+				<button type="submit">Save Location</button>
+			</form>
+			</div> 
+		</div>
+
+		<!-- list of saved locations -->
+		<div class="saved-locations">
+			<h3>Saved locations:</h3>
+			<div ng-repeat="location in weather.locations">
+				<p ng-click="weather.getWeatherByLoc(location.lat,location.lng)">{{location.name}}</p>
+				<button ng-click="weather.deleteLocation(location._id)">Dlete</button>
+				<button ng-show="!(location.renaming)" ng-click="location.renaming = !(location.renaming)">Rname</button>
+				<div ng-show="location.renaming">
+					<input type="text" ng-model="location.newName" required>
+					<button ng-click="weather.renameLocation(location._id, location.newName)"">Rname</button>
+					<button ng-click="location.renaming=false">Cncel</button>
+				</div>
+			</div>
+		</div>
+
+	</div> <!-- end container -->
+
+</body>
+</html>
