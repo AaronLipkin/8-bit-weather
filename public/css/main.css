@@ -32,12 +32,28 @@ button {
 	color: #25E359;
 	height: 20px;
 	width: 100px;
-	animation: neon 1.5s ease-in-out infinite alternate;
+	-webkit-transition: all 1s ease;
+	-moz-transition: all 1s ease;
+	-o-transition: all 1s ease;
+	transition: all 1s ease;
 }
 
 button:hover {
 	background-color: #25E359;
 	color: black;
+}
+
+button:after {
+	background: #25E359;
+	opacity: .5;
+	-moz-transform: translateX(-50%) translateY(-50%);
+	-ms-transform: translateX(-50%) translateY(-50%);
+	-webkit-transform: translateX(-50%) translateY(-50%);
+	transform: translateX(-50%) translateY(-50%);
+}
+button:hover:after {
+	height: 140%;
+	opacity: 1;
 }
 
 p {
