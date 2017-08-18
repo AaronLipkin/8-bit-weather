@@ -31,13 +31,15 @@ app.get('/', (req, res)=>{
 
 
 //	MONGOOSE CONNECTION
-mongoose.connect('mongodb://localhost:27017/8bitweather');
+var mongoUri = process.env.MONGODB_URI || 'mongodb://localhost:27017/8bitweather';
+
+mongoose.connect(mongoUri);
 mongoose.connection.once('open', ()=>{
   console.log('mongo is connected');
 });
-
+port = process.env.PORT || 3000;
 
 // port
-app.listen(3000, ()=>{
+app.listen(port, ()=>{
 	console.log('listening bro');
 });
