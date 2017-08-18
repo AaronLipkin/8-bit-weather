@@ -33,16 +33,22 @@
 		<div class="my-weather">
 			<button ng-click="weather.getWeather()">Use My location</button>
 			<div ng-show="weather.weather">
-			<h1>Current Weather for {{weather.weather.data.name}}</h1>
-			{{weather.weather.data.main.temp *9/5 + 32}} degrees
+			<h1>{{weather.weather.data.name}}</h1>
+			<h4>{{weather.weather.data.main.temp *9/5 + 32}} &deg;F<br/>
+			{{weather.weather.data.weather[0].description}}<br/>
+			{{weather.weather.data.main.humidity}} humidity<br/>
+			{{weather.weather.data.wind.speed}} wind speed<br/>
+
+
+			</h4>
 			<form ng-submit="weather.saveLocation()">
 				<input type="text" ng-model="weather.name" required>
 				<button type="submit">Save Location</button>
 			</form>
-			</div>
+			</div> 
 		</div>
 
-		<!-- list of saved locations	 -->
+		<!-- list of saved locations -->
 		<div ng-repeat="location in weather.locations">
 			{{location.name}}
 			<button ng-click="weather.deleteLocation(location._id)">Dlete</button>
@@ -55,5 +61,6 @@
 		</div>
 
 	</div> <!-- end container -->
+
 </body>
 </html>
