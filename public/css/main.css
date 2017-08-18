@@ -5,12 +5,15 @@ body {
     height: 100%;
     color: #ffffff;
 }
-
 h1 {
 	font-family: 'Press Start 2P', cursive;
 	color: #25E359;
 	font-size: 48px;
 }
+
+/*************************
+/* main container styles 
+**************************/
 
 .container {
 	position: absolute;
@@ -19,6 +22,10 @@ h1 {
     transform: translate(-50%,-50%);
 	display: none;
 }
+
+/*************************
+/* title styles 
+**************************/
 
 .title {
 	text-align: center;
@@ -31,13 +38,8 @@ h1 {
     cursor: pointer;
 }
 
-.start {
-	font-size: 75px;
-}
-
-
-
 .start, .start.active {
+  font-size: 75px;
   -webkit-animation: neon 1.5s ease-in-out infinite alternate;
   -moz-animation: neon 1.5s ease-in-out infinite alternate;
   animation: neon 1.5s ease-in-out infinite alternate;
@@ -51,3 +53,14 @@ h1 {
     text-shadow: 0 0 5px #78b761, 0 0 10px #78b761, 0 0 15px #78b761, 0 0 20px #35a50d, 0 0 35px #35a50d, 0 0 40px #35a50d, 0 0 50px #35a50d, 0 0 75px #35a50d;
   }
 }
+
+
+/*************************
+/* my weather styles 
+**************************/
+
+
+
+
+
+
