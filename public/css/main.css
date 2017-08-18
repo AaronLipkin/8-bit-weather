@@ -34,6 +34,14 @@ button {
 	animation: neon 1.5s ease-in-out infinite alternate;
 }
 
+p {
+	display: inline-block;
+	margin-right: 20px;
+	margin-bottom: 6px;
+	cursor: pointer;
+	vertical-align: -8%;
+}
+
 /*************************
 /* main container styles 
 **************************/
