@@ -11,6 +11,31 @@ h1 {
     font-size: 48px;
 }
 
+<<<<<<< HEAD
+=======
+h4 {
+	font-family: 'Press Start 2P', cursive;
+    color: #25E359;
+}
+
+input {
+	border: 2px solid #25E359;
+	background-color: black;
+	color: #25E359;
+	height: 20px;
+	width: 300px;
+}
+
+button {
+	border: 2px solid #25E359;
+	background-color: black;
+	color: #25E359;
+	height: 20px;
+	width: 100px;
+	animation: neon 1.5s ease-in-out infinite alternate;
+}
+
+>>>>>>> 3e9600db86a165cca924c8952dfe2648f4e6ca0c
 /*************************
 /* main container styles 
 **************************/
@@ -20,9 +45,14 @@ h1 {
     left: 50%;
     transform: translate(-50%,-50%);
 }
+
+
+
+
 /*************************
 /* title styles 
 **************************/
+
 .title {
     text-align: center;
     text-justify: inter-word;
@@ -66,6 +96,5 @@ h1 {
 @keyframes spin {
 	from {transform: rotate(0deg);} to {transform: rotate(360deg);}
 }
-/*************************
-/* my weather styles 
-**************************/
+
+
