@@ -48,8 +48,9 @@
 		</div>
 
 		<!-- list of saved locations -->
+		<h3>Saved locations:</h3>
 		<div ng-repeat="location in weather.locations">
-			{{location.name}}
+			<p>{{location.name}}</p>
 			<button ng-click="weather.deleteLocation(location._id)">Dlete</button>
 			<button ng-show="!(location.renaming)" ng-click="location.renaming = !(location.renaming)">Rname</button>
 			<div ng-show="location.renaming">
