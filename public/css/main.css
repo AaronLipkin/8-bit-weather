@@ -42,6 +42,8 @@ button {
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
+    border: 2px solid #25E359;
+    background: rgba(80, 78, 78, 0.6);
 }
 
 

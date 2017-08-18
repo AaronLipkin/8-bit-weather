@@ -34,9 +34,9 @@
 		<div class="my-weather">
 			<div ng-show="weather.weather">
 			<h1>{{weather.weather.data.name}}</h1>
-			<h4>{{weather.weather.data.main.temp *9/5 + 32}} &deg;F<br/>
-			{{weather.weather.data.main.humidity}} humidity<br/>
-			{{weather.weather.data.wind.speed}} wind speed<br/>
+			<h4>{{weather.weather.data.main.temp *9/5 + 32}}&deg;F<br/>
+			{{weather.weather.data.main.humidity}}% humidity<br/>
+			{{weather.weather.data.wind.speed}}mph wind speed<br/>
 			{{weather.weather.data.weather[0].description}}<br/>
 			</h4>
 			
